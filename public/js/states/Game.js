@@ -1,4 +1,9 @@
 var Achicken = Achicken || {};
+var socket = io.connect(window.location.href);;
+socket.on('greet', function(data) {
+	console.log(data);
+	socket.emit('respond', {message: 'Hello to you too, server'});
+});
 
 Achicken.GameState = {
 
@@ -8,7 +13,7 @@ Achicken.GameState = {
 		this.MAX_SPEED_SHOOT = 1100;
 		this.SHOOT_FACTOR = 12;
 		this.KILL_DIFF = 25;
-		
+
 		//keep track of the current level
 		this.currentLevel = currentLevel ? currentLevel : 'level1';
 		
