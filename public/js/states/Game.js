@@ -50,10 +50,10 @@ Achicken.GameState = {
     
     this.player = this.add.sprite(180, 400, 'chicken');
     this.game.physics.p2.enable(this.player);
-	this.player.enableBody = true;
+	  this.player.enableBody = true;
     this.player.physicsBodyType = Phaser.Physics.P2JS;
-	this.player.body.setCollisionGroup(this.playerCollisionGroup);
-	this.player.body.collides([this.blocksCollisionGroup]);
+	  this.player.body.setCollisionGroup(this.playerCollisionGroup);
+    this.player.body.collides([this.blocksCollisionGroup]);
 },
 
   update: function() {  
