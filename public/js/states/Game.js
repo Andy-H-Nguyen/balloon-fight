@@ -54,9 +54,19 @@ Achicken.GameState = {
     this.player.physicsBodyType = Phaser.Physics.P2JS;
 	this.player.body.setCollisionGroup(this.playerCollisionGroup);
 	this.player.body.collides([this.blocksCollisionGroup]);
+
+	this.cursors = this.game.input.keyboard.createCursorKeys();
 },
 
-  update: function() {  
-
+  update: function() {
+	if (this.cursors.left.isDown) {
+		this.player.body.applyForce([10, 0], this.player.x, this.player.y);
+	}
+	if (this.cursors.right.isDown) {
+		this.player.body.applyForce([-10, 0], this.player.x, this.player.y);
+	}
+	if (this.cursors.up.upDuration()) {
+		this.player.body.moveUp(200);
+	}
   } 
 };
