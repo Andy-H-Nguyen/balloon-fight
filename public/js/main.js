@@ -1,9 +1,9 @@
-var DunCrawl = DunCrawl || {};
+var Achicken = Achicken || {};
 
-DunCrawl.game = new Phaser.Game(360, 640, Phaser.AUTO);
+Achicken.game = new Phaser.Game(1080, 640, Phaser.AUTO);
 
-DunCrawl.game.state.add('Boot', DunCrawl.BootState);
-DunCrawl.game.state.add('Preload', DunCrawl.PreloadState);
-DunCrawl.game.state.add('Game', DunCrawl.GameState);
+Achicken.game.state.add('Boot', Achicken.BootState); 
+Achicken.game.state.add('Preload', Achicken.PreloadState); 
+Achicken.game.state.add('Game', Achicken.GameState);
 
-DunCrawl.game.state.start('Boot');
+Achicken.game.state.start('Boot'); 

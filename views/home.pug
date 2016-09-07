@@ -1,28 +1,16 @@
 block content
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
-    style.
-      body {
-      background-color: black;
-      padding: 0px;
-      margin: 0px;
-      }
-      @font-face {
-      font-family: 'Prstart';
-      src: url('assets/fonts/prstart.ttf');
-      }
-      .fontPreload {
-      font-family: Prstart;
-      position:absolute;
-      left:-100px;
-      }
-    body
-    script(type='text/javascript', src='js/phaser.min.js')
-    script(type='text/javascript', src='js/states/Boot.js')
-    script(type='text/javascript', src='js/states/Preload.js')
-    script(type='text/javascript', src='js/states/Game.js')
-    script(type='text/javascript', src='js/prefabs/Board.js')
-    script(type='text/javascript', src='js/prefabs/Item.js')
-    script(type='text/javascript', src='js/prefabs/Enemy.js')
-    script(type='text/javascript', src='js/main.js')
+ head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no')
+  style.
+    body {
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+    }
+body
+  script(type='text/javascript', src='js/phaser.js')
+  script(type='text/javascript', src='js/states/Boot.js')
+  script(type='text/javascript', src='js/states/Preload.js')
+  script(type='text/javascript', src='js/states/Game.js')
+  script(src='js/main.js')
