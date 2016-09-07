@@ -18,7 +18,7 @@ Achicken.GameState = {
     //collision groups - if you want to specify what collides with what
     this.blocksCollisionGroup = this.game.physics.p2.createCollisionGroup();
     this.enemiesCollisionGroup = this.game.physics.p2.createCollisionGroup();
-    this.chickensCollisionGroup = this.game.physics.p2.createCollisionGroup();
+    this.playerCollisionGroup = this.game.physics.p2.createCollisionGroup();
 
   },
   create: function() {      
@@ -45,13 +45,15 @@ Achicken.GameState = {
     
     //specify collision for the floor
     this.floor.body.setCollisionGroup(this.blocksCollisionGroup);
-    this.floor.body.collides([this.blocksCollisionGroup, this.enemiesCollisionGroup, this.chickensCollisionGroup]);
+    this.floor.body.collides([this.blocksCollisionGroup, this.enemiesCollisionGroup, this.playerCollisionGroup]);
     this.floor.body.static = true;
     
     this.player = this.add.sprite(180, 400, 'chicken');
-    this.player.enableBody = true;
-    this.player.physicsBodyType = Phaser.Physics.P2JS;
     this.game.physics.p2.enable(this.player);
+	this.player.enableBody = true;
+    this.player.physicsBodyType = Phaser.Physics.P2JS;
+	this.player.body.setCollisionGroup(this.playerCollisionGroup);
+	this.player.body.collides([this.blocksCollisionGroup]);
 },
 
   update: function() {  
