@@ -21,27 +21,13 @@ Achicken.GameState = {
 		this.game.physics.p2.gravity.y = 1000;
 		
 		//collision groups - if you want to specify what collides with what
-		this.blocksCollisionGroup = this.game.physics.p2.createCollisionGroup();
-		this.enemiesCollisionGroup = this.game.physics.p2.createCollisionGroup();
 		this.playerCollisionGroup = this.game.physics.p2.createCollisionGroup();
 	},
 	create: function() {
 		//sky background
 		this.sky = this.add.tileSprite(0, 0, this.game.world.width, this.game.world.height, 'sky');
 		this.game.world.sendToBack(this.sky);
-		
-		this.chickenHUD = this.add.group();
-		
-		//enemies
-		this.enemies = this.add.group();
-		this.enemies.enableBody = true;
-		this.enemies.physicsBodyType = Phaser.Physics.P2JS;
-		
-		//blocks
-		this.blocks = this.add.group();
-		this.blocks.enableBody = true;
-		this.blocks.physicsBodyType = Phaser.Physics.P2JS;
-		
+				
 		//bodies in p2 -> they get their anchor points set to 0.5
 		this.floor = this.add.tileSprite(this.game.world.width/2, this.game.world.height - 24, this.game.world.width, 48, 'floor');
 		this.blocks.add(this.floor);
