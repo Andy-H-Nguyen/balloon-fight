@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/ahng1996/",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3",
-    "moment": "^2.10.6",
-    "socket.io": "^1.3.7"
+    "express": "^4.13.2",
+    "socket.io": "^1.5.0"
   }
 }
