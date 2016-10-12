@@ -1,5 +1,6 @@
 var Achicken = Achicken || {};
-var socket = io.connect(window.location.href);;
+var socket = io();
+
 socket.on('greet', function(data) {
 	console.log(data);
 	socket.emit('respond', {message: 'Hello to you too, server'});
@@ -57,13 +58,16 @@ Achicken.GameState = {
 
 	update: function() {
 		if (this.cursors.left.isDown) {
-			this.player.body.applyForce([10, 0], this.player.x, this.player.y);
+			socket.emit('keydown', Phaser.KeyCode.LEFT);
+			//this.player.body.applyForce([10, 0], this.player.x, this.player.y);
 		}
 		if (this.cursors.right.isDown) {
-			this.player.body.applyForce([-10, 0], this.player.x, this.player.y);
+			socket.emit('keydown', Phaser.KeyCode.RIGHT);
+			//this.player.body.applyForce([-10, 0], this.player.x, this.player.y);
 		}
 		if (this.cursors.up.upDuration()) {
-			this.player.body.moveUp(200);
+			socket.emit('keyup', Phaser.KeyCode.UP);
+			//this.player.body.moveUp(200);
 		}
 	}
 };
